@@ -179,9 +179,10 @@ Story format: `ID Title [tier] (size)`. Sizes: S ≈ a day or less, M ≈ a few 
 
   _`hello`: 600 instanced quads, a pure function of index and time, premultiplied over the page. 0.2 to 0.4 ms on Dawn, 0.50 ms in Chrome: Tier A. Flash `low`, pattern `none`. Its flakes all fall at one depth, so the motion check read their fall as one whole-field drift (0.059 widths a second, over the cap) until they were slowed._
 
-- [ ] **1.3 Repository and CI** (S) — its own git repository and public GitHub remote, and the CI workflow on software Vulkan (lint, format, typecheck, tests, build), green once.
+- [x] **1.3 Repository and CI** (S) — its own git repository and public GitHub remote, and the CI workflow on software Vulkan (lint, format, typecheck, tests, build), green once.
 
-  _Repository `s4njee/snowtemple`, private for now: creating it public was blocked by the session's permission check. CI cannot start on a private repository on this account (Actions billing), so it goes green once the repository is made public._
+  _Public repository `s4njee/snowtemple`; CI green on 3f57e5c. (While the repository was private GitHub would not start the job, for a billing reason.)_
+
 - [x] **1.4 Deploy** (S) — Cloudflare Pages project `snowtemple` (classic, created with `--force`), and an `npm run deploy` that builds, checks the bundle and uploads `dist`.
 
   _Live at <https://snowtemple.pages.dev>, deployed from 3d05b3b._
