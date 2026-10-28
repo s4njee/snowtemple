@@ -180,7 +180,11 @@ Story format: `ID Title [tier] (size)`. Sizes: S ≈ a day or less, M ≈ a few 
   _`hello`: 600 instanced quads, a pure function of index and time, premultiplied over the page. 0.2 to 0.4 ms on Dawn, 0.50 ms in Chrome: Tier A. Flash `low`, pattern `none`. Its flakes all fall at one depth, so the motion check read their fall as one whole-field drift (0.059 widths a second, over the cap) until they were slowed._
 
 - [ ] **1.3 Repository and CI** (S) — its own git repository and public GitHub remote, and the CI workflow on software Vulkan (lint, format, typecheck, tests, build), green once.
-- [ ] **1.4 Deploy** (S) — Cloudflare Pages project `snowtemple` (classic, created with `--force`), and an `npm run deploy` that builds, checks the bundle and uploads `dist`.
+
+  _Repository `s4njee/snowtemple`, private for now: creating it public was blocked by the session's permission check. CI cannot start on a private repository on this account (Actions billing), so it goes green once the repository is made public._
+- [x] **1.4 Deploy** (S) — Cloudflare Pages project `snowtemple` (classic, created with `--force`), and an `npm run deploy` that builds, checks the bundle and uploads `dist`.
+
+  _Live at <https://snowtemple.pages.dev>, deployed from 3d05b3b._
 - [ ] **1.5 Posters, catalogue and the holofx site** (S) — posters from held frames, `catalogue.json`, and Snow Temple in the holofx site's dropdown, lab and effect pages.
 
   _Posters (9 and 12 kB) and `catalogue.json` done. Still to do: the holofx site, as for The Hero's Journey._
