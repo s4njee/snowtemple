@@ -12,7 +12,12 @@ The HUD time is not the number the cost studies report. It is one frame measured
 
 | Effect | Started | Animates | HUD at 1080p |
 | --- | ---: | --- | --- |
-| hello | 8 of 8 | yes | 60 fps, 0.50 ms (0.44 to 0.64 over 3 loads) |
-| snowfall | 8 of 8 | yes | 60 fps, 0.90 ms (0.88 to 0.99 over 3 loads) |
+| blizzard | 8 of 8 | yes | 60 fps, 5.69 ms (5.54 to 6.03 over 3 loads) |
+| footprints | 8 of 8 | yes | 60 fps, 1.44 ms (1.42 to 1.50 over 3 loads) |
+| hello | 8 of 8 | yes | 60 fps, 0.48 ms (0.43 to 0.51 over 3 loads) |
+| melt | 8 of 8 | yes | 60 fps, 0.90 ms (0.90 to 0.91 over 3 loads) |
+| settling-snow | 8 of 8 | yes | 60 fps, 0.80 ms (0.80 to 0.81 over 3 loads) |
+| snow-globe | 8 of 8 | yes | 60 fps, 0.72 ms (0.69 to 0.74 over 3 loads) |
+| snowfall | 8 of 8 | yes | 60 fps, 0.74 ms (0.71 to 0.75 over 3 loads) |
 
 No view logged a console error.

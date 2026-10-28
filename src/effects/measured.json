@@ -1,4 +1,26 @@
 {
+  "blizzard": {
+    "gpuMs": [
+      {
+        "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
+        "deviceClass": "unclassified",
+        "method": "marginal",
+        "ms": 2.32
+      }
+    ],
+    "bundleKb": 40.4
+  },
+  "footprints": {
+    "bundleKb": 36.2,
+    "gpuMs": [
+      {
+        "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
+        "deviceClass": "unclassified",
+        "method": "marginal",
+        "ms": 0.46
+      }
+    ]
+  },
   "hello": {
     "gpuMs": [
       {
@@ -8,16 +30,49 @@
         "ms": 0.39
       }
     ],
-    "bundleKb": 24
+    "bundleKb": 24.1
   },
-  "snowfall": {
-    "bundleKb": 32.8,
+  "melt": {
+    "bundleKb": 43.3,
     "gpuMs": [
       {
         "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
         "deviceClass": "unclassified",
         "method": "marginal",
-        "ms": 0.26
+        "ms": 0.57
+      }
+    ]
+  },
+  "settling-snow": {
+    "bundleKb": 42.6,
+    "gpuMs": [
+      {
+        "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
+        "deviceClass": "unclassified",
+        "method": "marginal",
+        "ms": 0.74
+      }
+    ]
+  },
+  "snow-globe": {
+    "gpuMs": [
+      {
+        "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
+        "deviceClass": "unclassified",
+        "method": "marginal",
+        "ms": 0.17
+      }
+    ],
+    "bundleKb": 30.4
+  },
+  "snowfall": {
+    "bundleKb": 33,
+    "gpuMs": [
+      {
+        "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
+        "deviceClass": "unclassified",
+        "method": "marginal",
+        "ms": 0.37
       }
     ]
   }

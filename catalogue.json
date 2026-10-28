@@ -29,6 +29,66 @@
       }
     },
     {
+      "id": "blizzard",
+      "title": "Blizzard",
+      "summary": "A whiteout: blowing snow as a volume of wind-stretched streamers, ray-marched through depth so the far page fades into white, with dense driven flakes in front. Gusts sweep across, closing the view and clearing it again.",
+      "epic": "2",
+      "tier": "B",
+      "tags": [
+        "snowfall",
+        "volume",
+        "fog",
+        "wind"
+      ],
+      "status": "demo",
+      "poster": "src/effects/blizzard/poster.webp",
+      "scorecard": {
+        "compute": false,
+        "mobile": "untested",
+        "flash": "low",
+        "pattern": "none",
+        "lightPage": "yes",
+        "features": {
+          "required": []
+        },
+        "fallback": "A still of the whiteout, or a white gradient over the page.",
+        "useCases": [
+          "A dramatic winter hero",
+          "A weather or outdoor brand page"
+        ]
+      }
+    },
+    {
+      "id": "snow-globe",
+      "title": "Snow globe",
+      "summary": "A snow globe over a small winter scene: drag or click to shake it, and its flakes swirl in the water, then sink slowly and settle on the scene until the next shake. The water-filled glass magnifies the scene inside like a lens, with a bright rim and a window highlight.",
+      "epic": "2",
+      "tier": "A",
+      "tags": [
+        "particles",
+        "compute",
+        "glass",
+        "pointer"
+      ],
+      "status": "demo",
+      "poster": "src/effects/snow-globe/poster.webp",
+      "scorecard": {
+        "compute": true,
+        "mobile": "untested",
+        "flash": "low",
+        "pattern": "none",
+        "lightPage": "yes",
+        "features": {
+          "required": []
+        },
+        "fallback": "A still of the globe with its snow settled.",
+        "useCases": [
+          "A product hero for a gift or seasonal page",
+          "A playful holiday greeting"
+        ]
+      }
+    },
+    {
       "id": "snowfall",
       "title": "Snowfall",
       "summary": "Snow falling through depth over the page: flakes sized from an exponential distribution, falling at their terminal speed, drifting with gusts that sweep across and swirling with their neighbours. Far flakes keep their light as they shrink to points; near ones streak over a shutter time.",
@@ -58,6 +118,97 @@
           "A seasonal hero",
           "Weather on a landing page",
           "A winter section background"
+        ]
+      }
+    },
+    {
+      "id": "footprints",
+      "title": "Footprints",
+      "summary": "A snow surface the pointer walks across: each step packs the snow down into a print and pushes it aside into a raised rim, rims slump to the angle of repose, and falling snow slowly fills the prints again. Lit by a low sun, so hollows read as blue shadow. With no pointer, someone walks across on their own.",
+      "epic": "3",
+      "tier": "A",
+      "tags": [
+        "snow surface",
+        "deformation",
+        "pointer",
+        "compute"
+      ],
+      "status": "demo",
+      "poster": "src/effects/footprints/poster.webp",
+      "scorecard": {
+        "compute": true,
+        "mobile": "untested",
+        "flash": "low",
+        "pattern": "none",
+        "lightPage": "yes",
+        "features": {
+          "required": []
+        },
+        "fallback": "A still of a trail of prints.",
+        "useCases": [
+          "A winter section background",
+          "A ground strip along the foot of a hero"
+        ]
+      }
+    },
+    {
+      "id": "melt",
+      "title": "Melt",
+      "summary": "Snow on the page's elements melting: each pile slumps as it wets, thins fastest where it is thinnest, so it pulls back from the ends, and drips off them. It melts to nothing, then snows again; or it melts as the page scrolls.",
+      "epic": "3",
+      "tier": "A",
+      "tags": [
+        "accumulation",
+        "melting",
+        "page elements",
+        "compute",
+        "scroll"
+      ],
+      "status": "demo",
+      "poster": "src/effects/melt/poster.webp",
+      "scorecard": {
+        "compute": true,
+        "mobile": "untested",
+        "flash": "low",
+        "pattern": "none",
+        "lightPage": "yes",
+        "features": {
+          "required": []
+        },
+        "fallback": "A still of the snow, or the CSS ridge (src/css/snow-ridge.css) shrinking on a transition.",
+        "useCases": [
+          "A spring or end-of-season page",
+          "A scroll-driven seasonal transition"
+        ]
+      }
+    },
+    {
+      "id": "settling-snow",
+      "title": "Settling snow",
+      "summary": "Snow that settles on the page's own elements: a pile along the top of every heading, card and button, built column by column as it falls, sliding to its angle of repose, blown into a cornice at the lee end, and lit with blue shadows so it reads on a white page. The pointer brushes it off; a press shakes an element's snow loose.",
+      "epic": "3",
+      "tier": "A",
+      "tags": [
+        "snowfall",
+        "accumulation",
+        "page elements",
+        "compute"
+      ],
+      "status": "demo",
+      "poster": "src/effects/settling-snow/poster.webp",
+      "scorecard": {
+        "compute": true,
+        "mobile": "untested",
+        "flash": "low",
+        "pattern": "none",
+        "lightPage": "yes",
+        "features": {
+          "required": []
+        },
+        "fallback": "CSS: a ridge of snow on each element (src/css/snow-ridge.css), with no settling.",
+        "useCases": [
+          "A seasonal landing page",
+          "A winter promotion over a real layout"
         ]
       }
     }

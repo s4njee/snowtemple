@@ -27,10 +27,15 @@ node experiments/snow-compare.mjs   # page snow four ways: CSS, DOM, box-shadow,
 
 ## Effects
 
-| Id         | What                                                                                                           | Tier |
-| ---------- | -------------------------------------------------------------------------------------------------------------- | ---- |
-| `hello`    | The smallest effect: a few hundred soft flakes falling straight down, one instanced draw                       | A    |
-| `snowfall` | Snow through depth over the page: sized flakes at their fall speed, gusts and swirls, out-of-focus near flakes | A    |
+| Id              | What                                                                                                           | Tier |
+| --------------- | -------------------------------------------------------------------------------------------------------------- | ---- |
+| `hello`         | The smallest effect: a few hundred soft flakes falling straight down, one instanced draw                       | A    |
+| `snowfall`      | Snow through depth over the page: sized flakes at their fall speed, gusts and swirls, out-of-focus near flakes | A    |
+| `blizzard`      | A whiteout: ray-marched blowing snow that hides the far page, gust fronts and dense driven flakes              | B    |
+| `snow-globe`    | A snow globe to shake: flakes swirl in the water, sink and settle on the scene; the glass a lens               | A    |
+| `settling-snow` | Snow that settles on the page's own elements, to its angle of repose; the pointer brushes it off               | A    |
+| `footprints`    | A snow surface the pointer walks prints into, with raised rims, refilled by falling snow                       | A    |
+| `melt`          | Settled snow melting: piles slump, pull back from the ends and drip, then snow again                           | A    |
 
 ## Layout
 

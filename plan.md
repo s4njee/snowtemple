@@ -83,6 +83,9 @@ These findings shape this plan, so they need not be rediscovered.
 - **Snow that falls as one sheet is whole-field motion; parallax breaks it up.** Flakes at one depth fall together, and the motion check reads a drift over the cap. Flakes at many depths fall at many screen speeds and read a fifth to a third of it.
 - **Optical flow cannot see sparse, faint particles.** Block matching needs texture. Faint snow on black left a dozen trackable blocks, and a rigid fit to them invented zooms. Snow driven towards the viewer left almost none. For particle effects, the motion caps have to be checked from the effect's own transform as well.
 - **Driving into snow is vection at walking pace.** Flakes 3 m away, approached at 1.4 m/s, expand at 0.67 zoom doublings a second, nearly seven times the cap. The cap is reached at 0.21 m/s.
+- **Snow on the page is height per column, conserved.** A row of `r32float` columns per element edge, relaxed to the angle of repose with both sides of each exchange taken from the same old heights, keeps every grain of snow except what slides off the ends, and the shader matches the CPU model column for column. Half floats would lose the small deposits.
+- **White snow on a white page reads by its shadows.** The blue the sky lights its lower faces with, its occlusion where it meets the element and a faint rim are what carry it; the sunlit top alone is invisible.
+- **Regular things hide in generated scenes.** Stars at grid centres, flow made of one set of sine waves, and streamers stretched along the wind each read as a pattern to the analyser, and each was changed rather than gated.
 - **A few dozen flakes is CSS's limit.** Past that, CSS and DOM snow cost main-thread time per flake, and WebGPU's cost is flat. Box-shadow snow is flat too, by moving every flake together.
 
 ## Overlaps and who owns what
@@ -186,6 +189,7 @@ Story format: `ID Title [tier] (size)`. Sizes: S ≈ a day or less, M ≈ a few 
 - [x] **1.4 Deploy** (S) — Cloudflare Pages project `snowtemple` (classic, created with `--force`), and an `npm run deploy` that builds, checks the bundle and uploads `dist`.
 
   _Live at <https://snowtemple.pages.dev>, deployed from 3d05b3b._
+
 - [ ] **1.5 Posters, catalogue and the holofx site** (S) — posters from held frames, `catalogue.json`, and Snow Temple in the holofx site's dropdown, lab and effect pages.
 
   _Posters (9 and 12 kB) and `catalogue.json` done. Still to do: the holofx site, as for The Hero's Journey._
@@ -219,8 +223,14 @@ Flakes at depth, moving the way snow moves. Snow falls at about 1 m/s, far slowe
 
   Two findings changed it. Flakes wrapped in a box as wide as the far view left almost all of them as specks, so each wraps in the view at its own depth. And near flakes drawn sharp made the flash check fail at the default (`high`), so the view now has a focus distance and an aperture, and near flakes are large, faint, out-of-focus discs, as in photographs. 0.26 to 0.44 ms on Dawn at any density, 0.90 ms in Chrome: Tier A. Flash `low`, pattern `none`, motion inside the caps up to the strong dose. Not yet handed to Moon Temple's depth of field; it has its own thin-lens blur._
 
-- [ ] **2.2 `blizzard`** [B] (M) — dense, wind-driven snow in a whiteout: Fire Temple's volume ray-march kernel for blowing snow and fog, extinction that hides the far page, and gusts that clear and close the view. The motion caps matter most here (2.4).
-- [ ] **2.3 `snow-globe`** [B] (M) — a glass sphere over a small scene: shaken by the pointer or device motion, its flakes swirl in a simple fluid, then settle on the scene inside. Refraction from the shared glass chunks. A product hero for a gift or seasonal page.
+- [x] **2.2 `blizzard`** [B] (M) — dense, wind-driven snow in a whiteout: Fire Temple's volume ray-march kernel for blowing snow and fog, extinction that hides the far page, and gusts that clear and close the view. The motion caps matter most here (2.4).
+
+  _`blizzard`: a third-resolution ray-march of warped 3D gradient noise carried by the wind, 12 steps out to 40 m, with a haze that takes the far page to white, gust fronts every nine seconds, and 5000 driven, streaked flakes in front. Not Fire Temple's kernel, which this family does not carry. 2.3 ms on Dawn, 5.69 ms in Chrome: Tier B, narrowly, after three cuts from 9.7 ms. The motion caps did decide it: 2.5 m/s of wind drifted the field 0.054 widths a second, so the default is 1.6, and the `whiteout` preset gets its whiteness from the medium at a low dose. Strongly stretched streamers lined up into a grating at the strong dose; warped and softened, they read as none._
+
+- [x] **2.3 `snow-globe`** [B] (M) — a glass sphere over a small scene: shaken by the pointer or device motion, its flakes swirl in a simple fluid, then settle on the scene inside. Refraction from the shared glass chunks. A product hero for a gift or seasonal page.
+
+  _`snow-globe`: 2400 flakes in a compute pass, in a divergence-free flow (the curl of two sets of travelling waves at unrelated wavelengths, plus the shake's turn) whose energy decays over about three seconds. They sink slowly, reflect off the glass, settle on the scene when the water is calm and lift when it moves. Drag, click or device motion shakes it; idle, it shakes itself every 14 seconds. The water-filled glass is a radial lens over a 2D cabin-and-pine scene, not the shared glass chunks, which this family does not carry. 0.17 ms on Dawn, 0.72 ms in Chrome: Tier A by budget. A grid of stars and a single set of flow waves both made patterns, and were changed._
+
 - [x] **2.4 Vection study** [—] (S) — snow coming towards the viewer is the classic way to make a still person feel they are moving. Measured with the motion check on rendered frames: what speed, density and direction stay inside the caps, and whether a radial outflow reads as a zoom, as The Hero's Journey's rings did. The answer sets 2.1's and 2.2's limits.
 
   _[docs/studies/vection.md](docs/studies/vection.md). Falling snow, with and without wind, stays inside the caps up to the strong dose: at most a 3.5° a second turn and a 0.02 widths a second drift. Driven snow cannot be measured by the motion check at all: a sparse field of faint flakes leaves 0 to 22 trackable blocks. So the estimator now needs 20 blocks as evidence (it had reported spurious zooms from a dozen), and driving is held to the zoom cap by the effect's own transform, v / (z ln 2) doublings a second at the focus distance. That cap is reached at 0.21 m/s; walking pace is 0.67 doublings a second, so `into the snow` is declared and gated, and `tests/snowfall.test.ts` checks it._
@@ -239,9 +249,15 @@ Flakes at depth, moving the way snow moves. Snow falls at about 1 m/s, far slowe
 
 Snow that falls onto the page and stays there: on the tops of headings, cards, buttons and the nav bar. Fearing's fallen-snow model (SIGGRAPH 2000) is the reference for how snow piles: by the angle of repose, with drifts and cornices from the wind.
 
-- [ ] **3.1 Height fields on page shapes** [—] (M) — `src/gpu/pile/`. Each tracked element's top edge gets a row of columns in an `r32float` storage texture, one per CSS pixel. Flakes that land deposit into their column. A relaxation pass moves snow downhill wherever the slope between neighbours exceeds the angle of repose, and pushes it off the ends of the edge. Wind moves snow to the lee side and lets it overhang a little as a cornice. When an element moves (scroll, resize, layout), its pile moves with it. When it changes width, the pile is resampled. When it leaves the page, the pile is dropped. Tested: mass is conserved except where snow falls off, a pile never steepens past the angle, and a resize keeps the total.
-- [ ] **3.2 `settling-snow`** [B] (M) — `snowfall` plus 3.1: snow that settles on the page's own elements, drawn as a soft white ridge along each top edge with the pile's own shading. The pointer brushes it off, and the brushed snow falls as flakes. A button press shakes its pile loose.
-- [ ] **3.3 Snow shading** [—] (M) — what makes settled snow read, over a dark page and especially over a light one:
+- [x] **3.1 Height fields on page shapes** [—] (M) — `src/gpu/pile/`. Each tracked element's top edge gets a row of columns in an `r32float` storage texture, one per CSS pixel. Flakes that land deposit into their column. A relaxation pass moves snow downhill wherever the slope between neighbours exceeds the angle of repose, and pushes it off the ends of the edge. Wind moves snow to the lee side and lets it overhang a little as a cornice. When an element moves (scroll, resize, layout), its pile moves with it. When it changes width, the pile is resampled. When it leaves the page, the pile is dropped. Tested: mass is conserved except where snow falls off, a pile never steepens past the angle, and a resize keeps the total.
+
+  _`src/gpu/pile/`: `pile.ts` (the model, for tests) and `pile.wgsl`, `piles.ts` (the GPU). Rows of 2048 `r32float` columns, one per CSS pixel, 31 edges and the ground. Each frame runs a supply pass: snow open to the sky, uneven along the edge and tapering to `depth`; melt; wind with a cornice at the lee end; landed loose snow; brushing and shaking. Then four mass-conserving relaxations to the angle of repose, ping-ponged, then the loose particles, which land through integer atomics. Edges are keyed by element: a new one starts with a blanket, a resized one is resampled by overlap, a gone one is dropped. Tested: mass kept except off the ends, never steeper than the angle once settled, totals kept through resizes, wind strips and builds, depth reached and not passed, a shaded column gets nothing, a pile melts to exactly zero, and the shader matches the model column for column._
+
+- [x] **3.2 `settling-snow`** [B] (M) — `snowfall` plus 3.1: snow that settles on the page's own elements, drawn as a soft white ridge along each top edge with the pile's own shading. The pointer brushes it off, and the brushed snow falls as flakes. A button press shakes its pile loose.
+
+  _`settling-snow`: `snowfall`'s flakes over 3.1's piles on every element marked `data-sn-obstacle`, through `page-snow.ts`. The pointer is read from the window, so it brushes snow off even above page content; a press shakes 85% of an element's snow loose as falling particles. 0.4 to 0.7 ms on Dawn, 0.80 ms in Chrome: Tier A by budget; it needs compute._
+
+- [x] **3.3 Snow shading** [—] (M) — what makes settled snow read, over a dark page and especially over a light one:
   - sunlit faces near white;
   - blue shadows from the sky;
   - a soft edge from light scattering under the surface;
@@ -249,9 +265,20 @@ Snow that falls onto the page and stays there: on the tops of headings, cards, b
   - glints (6.4).
 
   Compared over the five page contexts, with the light page as the pass mark.
-- [ ] **3.4 `footprints`** [B] (M) — a snow surface (a page section's background, or a ground strip along the bottom of a hero) as a height field the cursor presses into. Each footprint pushes snow aside into a raised rim, and the hollows fill again with falling snow over time. After the Arkham Origins deformable snow talk.
-- [ ] **3.5 `melt`** [B] (S) — settled snow that melts with time or as the page scrolls: piles slump, thin and pull back from the edges, and drip off the ends. The pile reaches exactly zero (Definition of done 5), and nothing is left after a pause.
-- [ ] **3.6 CSS fallback for settled snow** [—] (S) — a `::before` ridge on each element, sized from a custom property. It is honest for a static seasonal look, with no settling.
+
+  _`src/gpu/pile/draw.wgsl`: each pile as a ridge seen from the front, the top skin turned to the sky and the rest to the viewer. Sunlit faces near white, the rest in the sky's blue; a little subsurface glow in the top skin; occlusion where it meets the element; a faint blue-grey rim; shoulders rounded over a few columns. Checked over the dark page and the light one in the cards context: on white it reads by its blue shadows. Glints wait for 6.4._
+
+- [x] **3.4 `footprints`** [B] (M) — a snow surface (a page section's background, or a ground strip along the bottom of a hero) as a height field the cursor presses into. Each footprint pushes snow aside into a raised rim, and the hollows fill again with falling snow over time. After the Arkham Origins deformable snow talk.
+
+  _`footprints`: a height field of a cell per 2 CSS px. A step packs the snow under a sole-and-heel print to 30% and pushes about as much into a rim; falling snow refills prints towards a drifting resting depth; rims slump at 38°, mass-conserving over four neighbours. Lit by a low sun, prints in deeper blue. The pointer walks (a step a stride, alternating sides); idle, someone crosses on their own. 0.5 to 0.8 ms on Dawn, 1.44 ms in Chrome: Tier A by budget._
+
+- [x] **3.5 `melt`** [B] (S) — settled snow that melts with time or as the page scrolls: piles slump, thin and pull back from the edges, and drip off the ends. The pile reaches exactly zero (Definition of done 5), and nothing is left after a pause.
+
+  _`melt`: 3.1's piles started full and melting, faster where thin, so they pull back from the ends; the angle of repose falls from 35° to 20° as the snow wets, and the ends drip clear beads. A pile reaches exactly zero (tested). It melts for 24 seconds and snows for 14, or melts as the page scrolls down. 0.6 to 0.7 ms on Dawn, 0.90 ms in Chrome: Tier A by budget._
+
+- [x] **3.6 CSS fallback for settled snow** [—] (S) — a `::before` ridge on each element, sized from a custom property. It is honest for a static seasonal look, with no settling.
+
+  _`src/css/snow-ridge.css`: a `::before` drift on each element marked `data-sn-snow`, sized by `--sn-snow-depth` and inset from the ends by `--sn-snow-inset`, white with a blue underside and a faint edge for white pages. The fallback for `settling-snow` and `melt`._
 
 ## Epic 4 — Frost and growth
 
