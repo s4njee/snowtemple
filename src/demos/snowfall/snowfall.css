@@ -1,0 +1,72 @@
+@import '../backdrop/page.css';
+
+/*
+ * The "First snow" page: the shared page (../backdrop/page.css) on a winter night, with the snow
+ * over the page instead of behind it, in black and white: no colour but the greys of snow at
+ * night. "Light page" (main.ts sets html[data-page='light']) turns it to a pale winter day, the
+ * hard case for white snow.
+ */
+
+:root {
+  --paper: #000;
+  --plate: #000000b3;
+  --text: #f2f2f2;
+  --muted: #b0b0b0;
+  --faint: #7a7a7a;
+  --hairline: #ffffff1f;
+  --control: #ffffff10;
+  --hue: #f2f2f2;
+  --toolbar: #000000f2;
+  /* The page's own picture: a night sky, black but for the faintest lift at the foot. */
+  --sky: linear-gradient(180deg, #000, #000 60%, #070707);
+}
+
+:root[data-page='light'] {
+  color-scheme: light;
+  --paper: #ececec;
+  --plate: #f6f6f680;
+  --text: #111;
+  --muted: #444;
+  --faint: #6e6e6e;
+  --hairline: #00000024;
+  --control: #0000000d;
+  --hue: #111;
+  --toolbar: #f6f6f6f2;
+  --sky: linear-gradient(180deg, #c4c4c4, #e0e0e0 55%, #f2f2f2);
+}
+
+/* The sky, fixed behind the page; the snow is fixed in front of it. */
+body {
+  background: var(--sky) fixed;
+  transition: background-color 0.3s;
+}
+
+/* The snow falls in front of the page's text and plates (it never takes the pointer, so links and
+   controls under it still work) and behind the toolbar. */
+#stage {
+  z-index: 5;
+}
+
+.toolbar {
+  background: var(--toolbar);
+}
+
+.toolbar button:hover {
+  border-color: var(--hue);
+}
+
+::selection {
+  color: var(--paper);
+}
+
+/* Without WebGPU: a few still flakes in CSS against the sky. */
+body[data-state='fallback'] {
+  background:
+    radial-gradient(circle at 14% 22%, #fff 0 0.35vh, transparent calc(0.35vh + 1px)) fixed,
+    radial-gradient(circle at 38% 12%, #fff 0 0.25vh, transparent calc(0.25vh + 1px)) fixed,
+    radial-gradient(circle at 63% 30%, #ffffffb0 0 0.5vh, transparent calc(0.5vh + 1px)) fixed,
+    radial-gradient(circle at 81% 16%, #fff 0 0.3vh, transparent calc(0.3vh + 1px)) fixed,
+    radial-gradient(circle at 72% 58%, #ffffff60 0 1.6vh, transparent calc(1.6vh + 1px)) fixed,
+    radial-gradient(circle at 26% 64%, #fff 0 0.3vh, transparent calc(0.3vh + 1px)) fixed,
+    var(--sky) fixed;
+}

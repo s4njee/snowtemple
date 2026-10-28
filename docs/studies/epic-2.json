@@ -1,0 +1,448 @@
+{
+  "epic": "2",
+  "measuredAt": "2026-10-28T12:42:09.646Z",
+  "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
+  "deviceClass": "unclassified",
+  "adapter": {
+    "vendor": "apple",
+    "architecture": "metal-3",
+    "device": "apple-m1-max",
+    "description": "Metal driver on macOS Version 26.6.2 (Build 25G83)"
+  },
+  "runtime": "Dawn (node webgpu bindings)",
+  "method": {
+    "metric": "GPU timestamps: frame span (first pass start to last pass end) and marginal cost per extra frame",
+    "warmupFrames": 12,
+    "rounds": 11,
+    "repeats": 4
+  },
+  "note": "Only this adapter was measured. spanMs includes the timing floor (see the \"(floor)\" rows); slopeMs is the cost of one more frame of the same work and is the number to compare by. A slope at or below zero means the work is below what this method can resolve.",
+  "rows": [
+    {
+      "effect": "(floor)",
+      "config": "one constant-colour pass",
+      "width": 1920,
+      "height": 1080,
+      "spanMs": 0.32768,
+      "slopeMs": 0.04369066666666669,
+      "slopeMinMs": -0.262144,
+      "slopeMaxMs": 0.5461333333333332,
+      "passes": 1,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "(tail)",
+      "config": "constant scene + bloom + output",
+      "width": 1920,
+      "height": 1080,
+      "spanMs": 0.720896,
+      "slopeMs": 0.589824,
+      "slopeMinMs": 0.32767999999999997,
+      "slopeMaxMs": 2.0534613333333334,
+      "passes": 11,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "default",
+      "width": 1920,
+      "height": 1080,
+      "spanMs": 0.393216,
+      "slopeMs": 0.262144,
+      "slopeMinMs": -0.04369066666666669,
+      "slopeMaxMs": 0.7208960000000001,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "preset steady",
+      "width": 1920,
+      "height": 1080,
+      "spanMs": 0.524288,
+      "slopeMs": 0.32767999999999997,
+      "slopeMinMs": 0.04369066666666669,
+      "slopeMaxMs": 0.5024426666666667,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "preset flurry",
+      "width": 1920,
+      "height": 1080,
+      "spanMs": 0.458752,
+      "slopeMs": 0.28398933333333337,
+      "slopeMinMs": 0.021845333333333345,
+      "slopeMaxMs": 0.6990506666666666,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "preset heavy",
+      "width": 1920,
+      "height": 1080,
+      "spanMs": 0.458752,
+      "slopeMs": 0.3713706666666667,
+      "slopeMinMs": 0.19660800000000003,
+      "slopeMaxMs": 0.6772053333333333,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "preset still",
+      "width": 1920,
+      "height": 1080,
+      "spanMs": 0.393216,
+      "slopeMs": 0.262144,
+      "slopeMinMs": -0.06553600000000004,
+      "slopeMaxMs": 0.589824,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "preset big, slow flakes",
+      "width": 1920,
+      "height": 1080,
+      "spanMs": 0.393216,
+      "slopeMs": 0.3495253333333334,
+      "slopeMinMs": 0.08738133333333331,
+      "slopeMaxMs": 0.65536,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "preset into the snow",
+      "width": 1920,
+      "height": 1080,
+      "spanMs": 0.32768,
+      "slopeMs": 0.2184533333333333,
+      "slopeMinMs": -0.08738133333333331,
+      "slopeMaxMs": 0.4369066666666667,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "dose=0.1",
+      "width": 1920,
+      "height": 1080,
+      "params": {
+        "dose": 0.1
+      },
+      "spanMs": 0.32768,
+      "slopeMs": 0.3495253333333333,
+      "slopeMinMs": 0.17476266666666665,
+      "slopeMaxMs": 0.5679786666666667,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "dose=0.35",
+      "width": 1920,
+      "height": 1080,
+      "params": {
+        "dose": 0.35
+      },
+      "spanMs": 0.458752,
+      "slopeMs": 0.28398933333333337,
+      "slopeMinMs": -0.15291733333333332,
+      "slopeMaxMs": 0.7645866666666667,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "dose=0.7",
+      "width": 1920,
+      "height": 1080,
+      "params": {
+        "dose": 0.7
+      },
+      "spanMs": 0.393216,
+      "slopeMs": 0.41506133333333334,
+      "slopeMinMs": 0.1092266666666667,
+      "slopeMaxMs": 0.6335146666666666,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "dose=1",
+      "width": 1920,
+      "height": 1080,
+      "params": {
+        "dose": 1
+      },
+      "spanMs": 0.458752,
+      "slopeMs": 0.4369066666666666,
+      "slopeMinMs": 0.021845333333333345,
+      "slopeMaxMs": 0.7208960000000001,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "shutter=0",
+      "width": 1920,
+      "height": 1080,
+      "params": {
+        "shutter": 0
+      },
+      "spanMs": 0.32768,
+      "slopeMs": 0.262144,
+      "slopeMinMs": 0.15291733333333332,
+      "slopeMaxMs": 0.589824,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "shutter=0.004",
+      "width": 1920,
+      "height": 1080,
+      "params": {
+        "shutter": 0.004
+      },
+      "spanMs": 0.32768,
+      "slopeMs": 0.3058346666666667,
+      "slopeMinMs": -0.08738133333333335,
+      "slopeMaxMs": 0.458752,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "shutter=0.016",
+      "width": 1920,
+      "height": 1080,
+      "params": {
+        "shutter": 0.016
+      },
+      "spanMs": 0.393216,
+      "slopeMs": 0.262144,
+      "slopeMinMs": 0.10922666666666665,
+      "slopeMaxMs": 0.6772053333333332,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "(floor)",
+      "config": "one constant-colour pass",
+      "width": 960,
+      "height": 540,
+      "spanMs": 0.065536,
+      "slopeMs": 0.065536,
+      "slopeMinMs": 0.02184533333333333,
+      "slopeMaxMs": 0.30583466666666664,
+      "passes": 1,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "(tail)",
+      "config": "constant scene + bloom + output",
+      "width": 960,
+      "height": 540,
+      "spanMs": 0.393216,
+      "slopeMs": 0.3713706666666667,
+      "slopeMinMs": 0.196608,
+      "slopeMaxMs": 0.7427413333333334,
+      "passes": 9,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "default",
+      "width": 960,
+      "height": 540,
+      "spanMs": 0.262144,
+      "slopeMs": 0.3495253333333333,
+      "slopeMinMs": 0,
+      "slopeMaxMs": 0.4805973333333333,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "preset steady",
+      "width": 960,
+      "height": 540,
+      "spanMs": 0.393216,
+      "slopeMs": 0.6772053333333332,
+      "slopeMinMs": -0.458752,
+      "slopeMaxMs": 1.114112,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "preset flurry",
+      "width": 960,
+      "height": 540,
+      "spanMs": 0.262144,
+      "slopeMs": 0.19660799999999998,
+      "slopeMinMs": -0.10922666666666665,
+      "slopeMaxMs": 0.4369066666666666,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "preset heavy",
+      "width": 960,
+      "height": 540,
+      "spanMs": 0.262144,
+      "slopeMs": 0.17476266666666665,
+      "slopeMinMs": -0.17476266666666665,
+      "slopeMaxMs": 0.524288,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "preset still",
+      "width": 960,
+      "height": 540,
+      "spanMs": 0.32768,
+      "slopeMs": 0.15291733333333332,
+      "slopeMinMs": -0.10922666666666665,
+      "slopeMaxMs": 0.24029866666666666,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "preset big, slow flakes",
+      "width": 960,
+      "height": 540,
+      "spanMs": 0.262144,
+      "slopeMs": 0.2184533333333333,
+      "slopeMinMs": -0.10922666666666665,
+      "slopeMaxMs": 0.5461333333333334,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "preset into the snow",
+      "width": 960,
+      "height": 540,
+      "spanMs": 0.262144,
+      "slopeMs": 0.24029866666666666,
+      "slopeMinMs": 0,
+      "slopeMaxMs": 0.65536,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "dose=0.1",
+      "width": 960,
+      "height": 540,
+      "params": {
+        "dose": 0.1
+      },
+      "spanMs": 0.262144,
+      "slopeMs": 0.2839893333333333,
+      "slopeMinMs": -0.1747626666666667,
+      "slopeMaxMs": 0.6772053333333333,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "dose=0.35",
+      "width": 960,
+      "height": 540,
+      "params": {
+        "dose": 0.35
+      },
+      "spanMs": 0.262144,
+      "slopeMs": 0.262144,
+      "slopeMinMs": -0.41506133333333334,
+      "slopeMaxMs": 0.5461333333333334,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "dose=0.7",
+      "width": 960,
+      "height": 540,
+      "params": {
+        "dose": 0.7
+      },
+      "spanMs": 0.32768,
+      "slopeMs": 0.196608,
+      "slopeMinMs": -0.065536,
+      "slopeMaxMs": 0.3495253333333333,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "dose=1",
+      "width": 960,
+      "height": 540,
+      "params": {
+        "dose": 1
+      },
+      "spanMs": 0.32768,
+      "slopeMs": 0.32767999999999997,
+      "slopeMinMs": -0.043690666666666655,
+      "slopeMaxMs": 0.6116693333333333,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "shutter=0",
+      "width": 960,
+      "height": 540,
+      "params": {
+        "shutter": 0
+      },
+      "spanMs": 0.262144,
+      "slopeMs": 0.17476266666666665,
+      "slopeMinMs": -0.15291733333333332,
+      "slopeMaxMs": 0.4805973333333333,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "shutter=0.004",
+      "width": 960,
+      "height": 540,
+      "params": {
+        "shutter": 0.004
+      },
+      "spanMs": 0.262144,
+      "slopeMs": 0.24029866666666666,
+      "slopeMinMs": -0.021845333333333345,
+      "slopeMaxMs": 0.7427413333333334,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "snowfall",
+      "config": "shutter=0.016",
+      "width": 960,
+      "height": 540,
+      "params": {
+        "shutter": 0.016
+      },
+      "spanMs": 0.262144,
+      "slopeMs": 0.131072,
+      "slopeMinMs": -0.32768,
+      "slopeMaxMs": 0.5461333333333332,
+      "passes": 2,
+      "metric": "gpu-timestamp"
+    }
+  ]
+}

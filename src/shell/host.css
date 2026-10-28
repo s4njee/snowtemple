@@ -1,0 +1,15 @@
+.sn-host {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.sn-host__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sn-host__canvas[hidden] {
+  display: none;
+}

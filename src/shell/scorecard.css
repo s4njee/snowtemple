@@ -1,0 +1,133 @@
+.sn-scorecard {
+  container-type: inline-size;
+}
+
+.sn-scorecard__grid {
+  display: grid;
+  gap: var(--sn-space-4);
+}
+
+.sn-scorecard__panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sn-space-3);
+  min-width: 0;
+  padding: var(--sn-space-4);
+}
+
+.sn-scorecard__live {
+  border-style: dashed;
+}
+
+.sn-scorecard__live[hidden] {
+  display: none;
+}
+
+.sn-scorecard__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.sn-scorecard__row {
+  display: grid;
+  gap: var(--sn-space-1);
+  padding: var(--sn-space-3) 0;
+  border-top: 1px solid var(--sn-border);
+}
+
+.sn-scorecard__row:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.sn-scorecard__value {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sn-space-1);
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.sn-scorecard__budget {
+  color: var(--sn-text-muted);
+}
+
+.sn-scorecard__features,
+.sn-scorecard__uses {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sn-space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sn-scorecard__uses li::before {
+  content: '– ';
+  color: var(--sn-text-muted);
+}
+
+.sn-scorecard__features [data-state='missing'] > span {
+  color: var(--sn-tier-c);
+}
+
+.sn-scorecard__features [data-state='available'] > span {
+  color: var(--sn-tier-a);
+}
+
+.sn-scorecard__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--sn-text-s);
+}
+
+.sn-scorecard__table caption {
+  padding-bottom: var(--sn-space-2);
+  font-size: var(--sn-text-xs);
+  text-align: left;
+}
+
+.sn-scorecard__table th,
+.sn-scorecard__table td {
+  padding: var(--sn-space-1) var(--sn-space-3) var(--sn-space-1) 0;
+  border-bottom: 1px solid var(--sn-border);
+  text-align: left;
+  font-weight: normal;
+}
+
+.sn-scorecard__table td:nth-child(2) {
+  white-space: nowrap;
+}
+
+.sn-scorecard__table thead th {
+  color: var(--sn-text-muted);
+  font-size: var(--sn-text-xs);
+}
+
+.sn-scorecard__note {
+  font-size: var(--sn-text-xs);
+}
+
+@container (min-width: 640px) {
+  .sn-scorecard__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .sn-scorecard__live {
+    grid-column: 1 / -1;
+  }
+
+  .sn-scorecard__live .sn-scorecard__list {
+    flex-direction: row;
+    gap: var(--sn-space-5);
+  }
+
+  .sn-scorecard__live .sn-scorecard__row {
+    padding: 0;
+    border-top: 0;
+  }
+}

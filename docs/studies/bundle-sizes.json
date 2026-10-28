@@ -1,0 +1,50 @@
+{
+  "eager": {
+    "chunks": 13,
+    "raw": 31620,
+    "gzip": 15057
+  },
+  "effects": {
+    "hello": {
+      "chunks": 11,
+      "ownGzip": 1011,
+      "gzip": 24591,
+      "raw": 63238,
+      "files": [
+        "assets/colour-caps-rW91Sa46.js",
+        "assets/dose-D7hN0jZo.js",
+        "assets/flakes-r4rVo1n4.js",
+        "assets/fullscreen-BDXEFvdz.js",
+        "assets/gamut-COkJmrKM.js",
+        "assets/hash-bWx0F85T.js",
+        "assets/hello-BWsvlLNc.js",
+        "assets/oklab-CS7oj3eq.js",
+        "assets/shader-xzRCRHTt.js",
+        "assets/tail-7SVhtKuJ.js",
+        "assets/thinfilm-Ci8F6ZWx.js"
+      ],
+      "gzipKb": 24
+    },
+    "snowfall": {
+      "chunks": 12,
+      "ownGzip": 5382,
+      "gzip": 33589,
+      "raw": 87511,
+      "files": [
+        "assets/colour-caps-rW91Sa46.js",
+        "assets/dose-D7hN0jZo.js",
+        "assets/flicker-kwKU6Yb5.js",
+        "assets/fullscreen-BDXEFvdz.js",
+        "assets/gamut-COkJmrKM.js",
+        "assets/hash-bWx0F85T.js",
+        "assets/oklab-CS7oj3eq.js",
+        "assets/shader-xzRCRHTt.js",
+        "assets/simplex-BHRnIhah.js",
+        "assets/snowfall-DggOsQrM.js",
+        "assets/tail-7SVhtKuJ.js",
+        "assets/thinfilm-Ci8F6ZWx.js"
+      ],
+      "gzipKb": 32.8
+    }
+  }
+}

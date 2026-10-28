@@ -1,0 +1,65 @@
+{
+  "project": "snowtemple",
+  "effects": [
+    {
+      "id": "hello",
+      "title": "Hello",
+      "summary": "The smallest effect: a few hundred soft flakes falling straight down, one instanced draw through the HDR tail, over the page. Every later effect starts from this shape.",
+      "epic": "1",
+      "tier": "A",
+      "tags": [
+        "scaffold",
+        "snowfall"
+      ],
+      "status": "demo",
+      "poster": "src/effects/hello/poster.webp",
+      "scorecard": {
+        "compute": false,
+        "mobile": "untested",
+        "flash": "low",
+        "pattern": "none",
+        "lightPage": "no",
+        "features": {
+          "required": []
+        },
+        "fallback": "A still of the flakes, or a few CSS-animated dots.",
+        "useCases": [
+          "The template for new effects"
+        ]
+      }
+    },
+    {
+      "id": "snowfall",
+      "title": "Snowfall",
+      "summary": "Snow falling through depth over the page: flakes sized from an exponential distribution, falling at their terminal speed, drifting with gusts that sweep across and swirling with their neighbours. Far flakes keep their light as they shrink to points; near ones streak over a shutter time.",
+      "epic": "2",
+      "tier": "A",
+      "tags": [
+        "snowfall",
+        "particles",
+        "wind"
+      ],
+      "status": "ready",
+      "poster": "src/effects/snowfall/poster.webp",
+      "scorecard": {
+        "compute": false,
+        "mobile": "untested",
+        "flash": "low",
+        "pattern": "none",
+        "motionPresets": [
+          "into the snow"
+        ],
+        "lightPage": "yes",
+        "features": {
+          "required": []
+        },
+        "fallback": "A still of the snow, or CSS snow for a few dozen flakes.",
+        "useCases": [
+          "A seasonal hero",
+          "Weather on a landing page",
+          "A winter section background"
+        ]
+      }
+    }
+  ]
+}

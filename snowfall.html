@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <title>First snow · Snow Temple snowfall</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23000'/%3E%3Cpath d='M0 13 5 10 9 12 16 9v7H0z' fill='%23e6e6e6'/%3E%3Ccircle cx='4' cy='4' r='1.1' fill='%23fff'/%3E%3Ccircle cx='10' cy='3' r='.7' fill='%23fff'/%3E%3Ccircle cx='12.5' cy='6.5' r='1.5' fill='%23fff' fill-opacity='.45'/%3E%3Ccircle cx='7' cy='7.5' r='.6' fill='%23fff'/%3E%3C/svg%3E"
+    />
+  </head>
+  <!-- snowfall fixed over the whole page, as a site would use it: the flakes fall in front of the
+       text and the plates, and never take the pointer, so everything under them still works. The
+       toolbar sits above the snow. "Light page" turns the page pale, where white flakes are hard
+       to see, and the effect's faint dark edge is what keeps them visible. -->
+  <body data-state="loading">
+    <div id="stage" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="wordmark plate" href="./">SNOW TEMPLE <span>FIELD STUDIES</span></a>
+      <nav class="plate" aria-label="Demo navigation">
+        <a href="#experiment">Experiment</a>
+        <a href="./?effect=snowfall">Gallery ↗</a>
+        <a href="#how-it-works">How it works ↓</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="experiment" class="experiment" aria-labelledby="title">
+        <div class="intro">
+          <p class="eyebrow plate">EXPERIMENT 01 / SNOW OVER THE PAGE</p>
+          <h1 id="title"><span class="plate">First</span><span class="plate">snow.</span></h1>
+          <p class="description plate">
+            Thousands of flakes falling between you and the page, from a quarter of a metre to
+            fifteen metres away. Each falls at its own terminal speed and drifts with gusts that
+            sweep across the window. Far flakes shrink to bright points, and the few close to the
+            lens are soft and wide.
+          </p>
+          <a class="button plate" href="#how-it-works">How it works ↓</a>
+        </div>
+
+        <div class="experiment-caption">
+          <span>THE SNOW IN FRONT / THE PAGE BEHIND IT</span
+          ><span>01 — A FLURRY, THE FOCUS DRIFTING</span>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="explanation" aria-labelledby="explanation-title">
+        <div class="section-heading">
+          <p class="eyebrow plate">HOW THE SNOW FALLS</p>
+          <h2 id="explanation-title" class="plate">No two<br />flakes alike.</h2>
+        </div>
+        <div class="notes">
+          <article class="note plate">
+            <span class="note-number">01 / SIZE</span>
+            <h3>Mostly small.</h3>
+            <p>
+              Flake sizes follow the exponential spread measured in real snowfall: a great many
+              small flakes and a few large ones. Heavier snow falls as bigger clumps, so turning up
+              the amount makes the flakes larger as well as more numerous.
+            </p>
+          </article>
+          <article class="note plate">
+            <span class="note-number">02 / FALL</span>
+            <h3>About a metre a second.</h3>
+            <p>
+              Snow is light for its size, so each flake soon stops speeding up and falls at a steady
+              speed of about a metre a second, bigger ones a little faster. Gusts sweep across, and
+              neighbouring flakes swirl together instead of each going its own way.
+            </p>
+          </article>
+          <article class="note plate">
+            <span class="note-number">03 / DEPTH</span>
+            <h3>Through a lens.</h3>
+            <p>
+              Only the flakes near the focus distance are sharp. Nearer ones swell into faint discs,
+              and the closest streak over the shutter's short exposure. Far ones keep their light as
+              they shrink, so the distance glitters instead of fading out.
+            </p>
+          </article>
+        </div>
+        <footer>
+          <a class="plate" href="./?effect=snowfall">Open the effect with every control ↗</a>
+          <span class="plate">Snow Temple / WebGPU / 2026</span>
+        </footer>
+      </section>
+    </main>
+
+    <aside class="toolbar" aria-label="Snow controls">
+      <div class="live-status">
+        <i aria-hidden="true"></i>
+        <div>
+          <span id="status" role="status">Waiting for snow…</span>
+          <span id="amount-name">A flurry</span>
+        </div>
+      </div>
+      <div class="toolbar-controls">
+        <label class="range-control"
+          >Amount
+          <input id="dose" type="range" min="0.05" max="1" step="0.01" value="0.14" />
+        </label>
+        <label class="range-control"
+          >Wind
+          <input id="wind" type="range" min="0" max="3" step="0.05" value="2.95" />
+        </label>
+        <label class="range-control"
+          >Size
+          <input id="size" type="range" min="0.5" max="6" step="0.05" value="3" />
+        </label>
+        <label class="range-control"
+          >Focus
+          <input id="focus" type="range" min="0.3" max="15" step="0.1" value="1.2" />
+          <output id="focus-value" for="focus">1.2 m</output>
+        </label>
+        <label class="check-control"
+          ><input id="sweep" type="checkbox" checked /> Sweep focus</label
+        >
+        <label class="check-control"><input id="light" type="checkbox" /> Light page</label>
+        <button id="pause" type="button" disabled>Pause</button>
+      </div>
+    </aside>
+
+    <script type="module" src="/src/demos/snowfall/main.ts"></script>
+  </body>
+</html>

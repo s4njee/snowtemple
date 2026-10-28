@@ -1,0 +1,179 @@
+/*
+ * The HUD sits on top of moving imagery, so it has its own near-opaque surface instead of
+ * borrowing the page's: text keeps its contrast whatever is behind it, in both themes.
+ */
+.sn-hud {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  /* Page gutters, the stage border, the HUD's own offset on both sides, and a scrollbar. */
+  max-width: calc(100vw - 80px);
+  max-height: calc(50vh - 2 * var(--sn-space-3));
+  border: 1px solid var(--sn-border);
+  border-radius: var(--sn-radius-m);
+  /* Opaque: readouts must stay legible over any effect and any page context beneath. */
+  background: var(--sn-surface);
+  color: var(--sn-text);
+  font-size: var(--sn-text-s);
+}
+
+.sn-hud [hidden] {
+  display: none;
+}
+
+.sn-hud__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sn-space-2);
+  padding: var(--sn-space-1) var(--sn-space-1) var(--sn-space-1) var(--sn-space-3);
+}
+
+.sn-hud__summary {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--sn-text-muted);
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sn-hud__toggle {
+  flex: none;
+  margin-left: auto;
+}
+
+.sn-hud__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sn-space-2);
+  padding: var(--sn-space-1) var(--sn-space-3) var(--sn-space-3);
+  overflow-y: auto;
+  border-top: 1px solid var(--sn-border);
+  padding-top: var(--sn-space-3);
+}
+
+.sn-hud__big {
+  font-size: var(--sn-text-l);
+  line-height: 1.1;
+}
+
+.sn-hud__fps {
+  font-family: var(--sn-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.sn-hud__rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sn-space-1);
+  margin: 0;
+}
+
+.sn-hud__passes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sn-space-1);
+}
+
+.sn-hud__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sn-space-3);
+}
+
+.sn-hud__row--pass {
+  padding-left: var(--sn-space-3);
+}
+
+.sn-hud__term {
+  flex: none;
+  color: var(--sn-text-muted);
+  font-size: var(--sn-text-xs);
+}
+
+.sn-hud__value {
+  margin: 0;
+  min-width: 0;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.sn-hud__status {
+  height: 18px;
+  vertical-align: baseline;
+  border-color: currentColor;
+  font-weight: 600;
+}
+
+.sn-hud__status[data-level='within'] {
+  color: var(--sn-tier-a);
+}
+
+.sn-hud__status[data-level='near'] {
+  color: var(--sn-tier-b);
+}
+
+.sn-hud__status[data-level='over'] {
+  color: var(--sn-tier-c);
+}
+
+.sn-hud__note {
+  font-size: var(--sn-text-xs);
+  line-height: 1.4;
+}
+
+.sn-hud__spark {
+  display: block;
+  width: 100%;
+  height: 32px;
+  border-bottom: 1px solid var(--sn-border);
+  overflow: visible;
+}
+
+.sn-hud__spark-line {
+  fill: none;
+  stroke: var(--sn-accent);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.sn-hud__spark-ref {
+  stroke: var(--sn-text-muted);
+  stroke-dasharray: 3 3;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.sn-hud__scales {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sn-space-1);
+}
+
+.sn-hud__scale {
+  justify-content: center;
+  padding: 0;
+}
+
+.sn-hud__details-summary {
+  color: var(--sn-text-muted);
+  font-size: var(--sn-text-xs);
+  cursor: pointer;
+}
+
+.sn-hud__details-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sn-space-2);
+  padding-top: var(--sn-space-2);
+}
+
+.sn-hud__features {
+  margin: 0;
+  color: var(--sn-text-muted);
+  font-size: var(--sn-text-xs);
+  overflow-wrap: anywhere;
+}

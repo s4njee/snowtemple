@@ -1,0 +1,253 @@
+/*
+ * Design tokens and the few primitives every shell component shares.
+ * The effects carry the page: chrome stays quiet, flat, and low-contrast against them.
+ * Components use these tokens only; no new colours, radii, or font sizes elsewhere.
+ *
+ * Light and dark equally: snow is white, so a light page is this family's hard case, not an
+ * afterthought. Neutrals are cool greys, a little blue, like a winter sky.
+ * The accent is the only glacier blue; tier colours stay away from it.
+ */
+
+:root {
+  color-scheme: dark;
+
+  --sn-font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --sn-font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --sn-text-xs: 0.75rem;
+  --sn-text-s: 0.8125rem;
+  --sn-text-m: 0.9375rem;
+  --sn-text-l: 1.25rem;
+  --sn-text-xl: 1.75rem;
+
+  --sn-space-1: 4px;
+  --sn-space-2: 8px;
+  --sn-space-3: 12px;
+  --sn-space-4: 16px;
+  --sn-space-5: 24px;
+  --sn-space-6: 40px;
+
+  --sn-radius-s: 4px;
+  --sn-radius-m: 8px;
+  --sn-radius-l: 14px;
+
+  --sn-bg: light-dark(#f3f6fa, #080b10);
+  --sn-surface: light-dark(#fcfdff, #0f141b);
+  --sn-surface-2: light-dark(#e4eaf2, #18202a);
+  --sn-border: light-dark(#cfd8e3, #263241);
+  --sn-text: light-dark(#0f1620, #e8eef6);
+  --sn-text-muted: light-dark(#536173, #9aa8b8);
+  --sn-accent: light-dark(#1f5fa8, #8ec5ff);
+  --sn-on-accent: light-dark(#fcfdff, #07121f);
+  --sn-focus: light-dark(#1f5fa8, #c4e0ff);
+
+  /* Practicality tiers: A drop-in, B feature, C showpiece. Hues clear of the blue accent:
+     Tier B is violet, not teal, which would sit beside it (as Storm Temple found for cyan). */
+  --sn-tier-a: light-dark(#1f7a4d, #6fd6a0);
+  --sn-tier-b: light-dark(#6a4bc4, #b8a4ff);
+  --sn-tier-c: light-dark(#8a5300, #f2c46f);
+
+  --sn-header-height: 52px;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='auto'] {
+  color-scheme: light dark;
+}
+
+/*
+ * A subtree can be shown as the other kind of page (the effect stage does this, story 2.7): the
+ * tokens are light-dark() values, so they follow whatever colour scheme the element has.
+ */
+[data-page='light'] {
+  color-scheme: light;
+}
+
+[data-page='dark'] {
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--sn-bg);
+  color: var(--sn-text);
+  font: var(--sn-text-m) / 1.5 var(--sn-font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--sn-accent);
+  text-underline-offset: 0.15em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--sn-focus);
+  outline-offset: 2px;
+}
+
+/* Numbers and code: tabular so readouts do not jitter as they update. */
+.sn-data {
+  font-family: var(--sn-font-mono);
+  font-size: var(--sn-text-s);
+  font-variant-numeric: tabular-nums;
+}
+
+.sn-muted {
+  color: var(--sn-text-muted);
+}
+
+.sn-label {
+  color: var(--sn-text-muted);
+  font-size: var(--sn-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.sn-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sn-space-2);
+  min-height: 32px;
+  padding: 0 var(--sn-space-3);
+  border: 1px solid var(--sn-border);
+  border-radius: var(--sn-radius-m);
+  background: var(--sn-surface);
+  color: var(--sn-text);
+  font: inherit;
+  font-size: var(--sn-text-s);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sn-button:hover {
+  background: var(--sn-surface-2);
+}
+
+.sn-button[aria-pressed='true'],
+.sn-button--primary {
+  border-color: var(--sn-accent);
+  background: var(--sn-accent);
+  color: var(--sn-on-accent);
+}
+
+.sn-button--quiet {
+  border-color: transparent;
+  background: transparent;
+}
+
+.sn-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 var(--sn-space-2);
+  border: 1px solid var(--sn-border);
+  border-radius: 999px;
+  color: var(--sn-text-muted);
+  font-size: var(--sn-text-xs);
+  white-space: nowrap;
+}
+
+/* Tier chips: add data-tier="A" | "B" | "C". */
+.sn-chip[data-tier] {
+  border-color: currentColor;
+  font-weight: 600;
+}
+
+.sn-chip[data-tier='A'] {
+  color: var(--sn-tier-a);
+}
+
+.sn-chip[data-tier='B'] {
+  color: var(--sn-tier-b);
+}
+
+.sn-chip[data-tier='C'] {
+  color: var(--sn-tier-c);
+}
+
+.sn-panel {
+  border: 1px solid var(--sn-border);
+  border-radius: var(--sn-radius-l);
+  background: var(--sn-surface);
+}
+
+.sn-tabs {
+  display: flex;
+  gap: var(--sn-space-4);
+  border-bottom: 1px solid var(--sn-border);
+}
+
+.sn-tab {
+  margin-bottom: -1px;
+  padding: var(--sn-space-2) 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--sn-text-muted);
+  font: inherit;
+  font-size: var(--sn-text-s);
+  cursor: pointer;
+}
+
+.sn-tab[aria-selected='true'] {
+  border-bottom-color: var(--sn-accent);
+  color: var(--sn-text);
+}
+
+/* Long-form text: write-ups and notes. */
+.sn-prose {
+  max-width: 68ch;
+  line-height: 1.65;
+}
+
+.sn-prose > * + * {
+  margin-top: var(--sn-space-4);
+}
+
+.sn-prose h2 {
+  margin-top: var(--sn-space-5);
+  font-size: var(--sn-text-l);
+}
+
+.sn-prose h3 {
+  font-size: var(--sn-text-m);
+}
+
+.sn-prose code {
+  padding: 0.1em 0.3em;
+  border-radius: var(--sn-radius-s);
+  background: var(--sn-surface-2);
+  font-family: var(--sn-font-mono);
+  font-size: 0.9em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

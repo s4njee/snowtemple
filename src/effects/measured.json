@@ -1,0 +1,24 @@
+{
+  "hello": {
+    "gpuMs": [
+      {
+        "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
+        "deviceClass": "unclassified",
+        "method": "marginal",
+        "ms": 0.39
+      }
+    ],
+    "bundleKb": 24
+  },
+  "snowfall": {
+    "bundleKb": 32.8,
+    "gpuMs": [
+      {
+        "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
+        "deviceClass": "unclassified",
+        "method": "marginal",
+        "ms": 0.26
+      }
+    ]
+  }
+}
