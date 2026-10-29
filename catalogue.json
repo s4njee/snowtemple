@@ -211,6 +211,107 @@
           "A winter promotion over a real layout"
         ]
       }
+    },
+    {
+      "id": "frost-creep",
+      "title": "Frost creep",
+      "summary": "A window pane frosting over in a cold snap: ice grows in from the frame and from specks near it by Kobayashi's phase-field model, branching into ferns, and stops where the room keeps the glass above freezing. Grown once and revealed by when each cell froze, so it can follow time or the scroll, and thaw back the way it came.",
+      "epic": "4",
+      "tier": "A",
+      "tags": [
+        "frost",
+        "phase field",
+        "growth",
+        "compute",
+        "scroll"
+      ],
+      "status": "demo",
+      "poster": "src/effects/frost-creep/poster.webp",
+      "scorecard": {
+        "compute": true,
+        "mobile": "untested",
+        "flash": "none",
+        "pattern": "none",
+        "lightPage": "yes",
+        "features": {
+          "required": []
+        },
+        "fallback": "A still of the frosted pane.",
+        "useCases": [
+          "A winter landing page, frosting as you scroll",
+          "A cold-snap weather alert"
+        ]
+      }
+    },
+    {
+      "id": "frost-text",
+      "title": "Frost text",
+      "summary": "Frost growing out from a heading's letters: ice nucleates on the glyphs' outlines and branches outwards by Kobayashi's phase-field model, one arm of each crystal pointing straight out of its letter, while a slower frost creeps over the letters themselves. Grown once and revealed by arrival time, by time or scroll.",
+      "epic": "4",
+      "tier": "A",
+      "tags": [
+        "frost",
+        "phase field",
+        "growth",
+        "text",
+        "compute",
+        "scroll"
+      ],
+      "status": "demo",
+      "poster": "src/effects/frost-text/poster.webp",
+      "scorecard": {
+        "compute": true,
+        "mobile": "untested",
+        "flash": "none",
+        "pattern": "none",
+        "lightPage": "yes",
+        "features": {
+          "required": []
+        },
+        "fallback": "A still of the frosted heading, or the heading itself.",
+        "useCases": [
+          "A winter campaign headline",
+          "A \"cold\" product name or sale banner"
+        ]
+      }
+    },
+    {
+      "id": "snowflake",
+      "title": "Snowflake",
+      "summary": "A snow crystal growing, a new one for every seed: Reiter's cellular automaton on a hexagonal grid, where a little vapour diffusing and freezing makes stellar dendrites, ferns, sectored plates or stellar plates from three numbers. Grown once, then drawn through the six-fold mirror fold as clear ice, so keeping it on screen costs a texture read.",
+      "epic": "4",
+      "tier": "A",
+      "tags": [
+        "snowflake",
+        "cellular automaton",
+        "growth",
+        "symmetry",
+        "compute"
+      ],
+      "status": "demo",
+      "poster": "src/effects/snowflake/poster.webp",
+      "scorecard": {
+        "compute": true,
+        "mobile": "untested",
+        "flash": "none",
+        "pattern": "none",
+        "patternPresets": [
+          "bright ice"
+        ],
+        "motionPresets": [
+          "bright ice"
+        ],
+        "lightPage": "no",
+        "features": {
+          "required": []
+        },
+        "fallback": "A still of the grown crystal.",
+        "useCases": [
+          "A loading indicator",
+          "A badge or avatar grown from a user id",
+          "A seasonal mark"
+        ]
+      }
     }
   ]
 }

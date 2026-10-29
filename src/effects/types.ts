@@ -113,7 +113,9 @@ export type ParamDef =
    * `L C h` per stop, hue in degrees, stops separated by commas. Edited in the shell's palette
    * editor, carried in links, baked by `createPaletteTexture`.
    */
-  | { type: 'palette'; default: string; label?: string };
+  | { type: 'palette'; default: string; label?: string }
+  /** A short free text, such as a heading to letter (Temple of Time's story 1.6). At most `maxLength` characters. */
+  | { type: 'text'; default: string; maxLength?: number; label?: string };
 
 /** One schema drives the control panel, the docs table, and URL state. */
 export type ParamSchema = Record<string, ParamDef>;

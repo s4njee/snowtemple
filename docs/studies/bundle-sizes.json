@@ -1,21 +1,21 @@
 {
   "eager": {
     "chunks": 13,
-    "raw": 36797,
-    "gzip": 16790
+    "raw": 40201,
+    "gzip": 17888
   },
   "effects": {
     "blizzard": {
       "chunks": 17,
       "ownGzip": 1639,
-      "gzip": 41419,
-      "raw": 110319,
+      "gzip": 41420,
+      "raw": 110321,
       "files": [
-        "assets/blizzard-BY2j5bxz.js",
+        "assets/blizzard-D_esqwwn.js",
         "assets/colour-caps-rW91Sa46.js",
         "assets/dose-D7hN0jZo.js",
         "assets/fbm-C42g5uzM.js",
-        "assets/flakes-CGGAg-bR.js",
+        "assets/flakes-Cq_199bD.js",
         "assets/flicker-kwKU6Yb5.js",
         "assets/fullscreen-BDXEFvdz.js",
         "assets/gamut-COkJmrKM.js",
@@ -26,7 +26,7 @@
         "assets/shader-xzRCRHTt.js",
         "assets/simplex-BHRnIhah.js",
         "assets/storm-iYDiFyZz.js",
-        "assets/tail-D1ZYRhWj.js",
+        "assets/tail-o8xFA3Md.js",
         "assets/thinfilm-Ci8F6ZWx.js"
       ],
       "gzipKb": 40.4
@@ -34,14 +34,14 @@
     "footprints": {
       "chunks": 14,
       "ownGzip": 2363,
-      "gzip": 37042,
-      "raw": 94930,
+      "gzip": 37043,
+      "raw": 94932,
       "files": [
         "assets/colour-caps-rW91Sa46.js",
         "assets/dose-D7hN0jZo.js",
-        "assets/flakes-CGGAg-bR.js",
+        "assets/flakes-Cq_199bD.js",
         "assets/flicker-kwKU6Yb5.js",
-        "assets/footprints-D0SjsVvj.js",
+        "assets/footprints-UjZ_DEPi.js",
         "assets/fullscreen-BDXEFvdz.js",
         "assets/gamut-COkJmrKM.js",
         "assets/hash-bWx0F85T.js",
@@ -49,16 +49,69 @@
         "assets/shader-xzRCRHTt.js",
         "assets/simplex-BHRnIhah.js",
         "assets/surface-B7Fc0nrS.js",
-        "assets/tail-D1ZYRhWj.js",
+        "assets/tail-o8xFA3Md.js",
         "assets/thinfilm-Ci8F6ZWx.js"
       ],
       "gzipKb": 36.2
     },
+    "frost-creep": {
+      "chunks": 18,
+      "ownGzip": 2282,
+      "gzip": 39734,
+      "raw": 104192,
+      "files": [
+        "assets/colour-caps-rW91Sa46.js",
+        "assets/dose-D7hN0jZo.js",
+        "assets/fbm-C42g5uzM.js",
+        "assets/frost-Dnff87DM.js",
+        "assets/frost-creep-cqR4MQIG.js",
+        "assets/fullscreen-BDXEFvdz.js",
+        "assets/gamut-COkJmrKM.js",
+        "assets/hash-bWx0F85T.js",
+        "assets/math-fT5w54uK.js",
+        "assets/noise-BHiu8YkL.js",
+        "assets/oklab-CS7oj3eq.js",
+        "assets/pane-DBjJemcK.js",
+        "assets/pane-RegHw4_t.js",
+        "assets/reveal-BRAKKxGj.js",
+        "assets/scroll-cc3lZRt9.js",
+        "assets/shader-xzRCRHTt.js",
+        "assets/tail-o8xFA3Md.js",
+        "assets/thinfilm-Ci8F6ZWx.js"
+      ],
+      "gzipKb": 38.8
+    },
+    "frost-text": {
+      "chunks": 17,
+      "ownGzip": 19000,
+      "gzip": 54247,
+      "raw": 127302,
+      "files": [
+        "assets/colour-caps-rW91Sa46.js",
+        "assets/dose-D7hN0jZo.js",
+        "assets/frost-Dnff87DM.js",
+        "assets/frost-text-Da3X9uu4.js",
+        "assets/fullscreen-BDXEFvdz.js",
+        "assets/gamut-COkJmrKM.js",
+        "assets/hash-bWx0F85T.js",
+        "assets/heading-CnSDK6RI.js",
+        "assets/math-fT5w54uK.js",
+        "assets/noise-BHiu8YkL.js",
+        "assets/oklab-CS7oj3eq.js",
+        "assets/reveal-BRAKKxGj.js",
+        "assets/scroll-cc3lZRt9.js",
+        "assets/seed-bIlsabO0.js",
+        "assets/shader-xzRCRHTt.js",
+        "assets/tail-o8xFA3Md.js",
+        "assets/thinfilm-Ci8F6ZWx.js"
+      ],
+      "gzipKb": 53
+    },
     "hello": {
       "chunks": 11,
-      "ownGzip": 1012,
-      "gzip": 24632,
-      "raw": 63312,
+      "ownGzip": 1014,
+      "gzip": 24636,
+      "raw": 63319,
       "files": [
         "assets/colour-caps-rW91Sa46.js",
         "assets/dose-D7hN0jZo.js",
@@ -66,67 +119,68 @@
         "assets/fullscreen-BDXEFvdz.js",
         "assets/gamut-COkJmrKM.js",
         "assets/hash-bWx0F85T.js",
-        "assets/hello-DrVDITh7.js",
+        "assets/hello-Da849-Gz.js",
         "assets/oklab-CS7oj3eq.js",
         "assets/shader-xzRCRHTt.js",
-        "assets/tail-D1ZYRhWj.js",
+        "assets/tail-o8xFA3Md.js",
         "assets/thinfilm-Ci8F6ZWx.js"
       ],
       "gzipKb": 24.1
     },
     "melt": {
-      "chunks": 15,
-      "ownGzip": 1834,
-      "gzip": 44368,
-      "raw": 114803,
+      "chunks": 16,
+      "ownGzip": 1128,
+      "gzip": 44500,
+      "raw": 114871,
       "files": [
         "assets/colour-caps-rW91Sa46.js",
         "assets/dom-rects-DX1BSTHv.js",
         "assets/dose-D7hN0jZo.js",
-        "assets/flakes-CGGAg-bR.js",
+        "assets/flakes-Cq_199bD.js",
         "assets/flicker-kwKU6Yb5.js",
         "assets/fullscreen-BDXEFvdz.js",
         "assets/gamut-COkJmrKM.js",
         "assets/hash-bWx0F85T.js",
-        "assets/melt-CMEXATHp.js",
+        "assets/melt-DS-RpFf_.js",
         "assets/oklab-CS7oj3eq.js",
-        "assets/page-snow-CxuTHlAr.js",
+        "assets/page-snow-BprpFoK4.js",
+        "assets/scroll-cc3lZRt9.js",
         "assets/shader-xzRCRHTt.js",
         "assets/simplex-BHRnIhah.js",
-        "assets/tail-D1ZYRhWj.js",
+        "assets/tail-o8xFA3Md.js",
         "assets/thinfilm-Ci8F6ZWx.js"
       ],
-      "gzipKb": 43.3
+      "gzipKb": 43.5
     },
     "settling-snow": {
       "chunks": 15,
-      "ownGzip": 1056,
-      "gzip": 43590,
-      "raw": 113081,
+      "ownGzip": 1057,
+      "gzip": 43593,
+      "raw": 113093,
       "files": [
         "assets/colour-caps-rW91Sa46.js",
         "assets/dom-rects-DX1BSTHv.js",
         "assets/dose-D7hN0jZo.js",
-        "assets/flakes-CGGAg-bR.js",
+        "assets/flakes-Cq_199bD.js",
         "assets/flicker-kwKU6Yb5.js",
         "assets/fullscreen-BDXEFvdz.js",
         "assets/gamut-COkJmrKM.js",
         "assets/hash-bWx0F85T.js",
         "assets/oklab-CS7oj3eq.js",
-        "assets/page-snow-CxuTHlAr.js",
-        "assets/settling-snow-DpxxWObn.js",
+        "assets/page-snow-BprpFoK4.js",
+        "assets/settling-snow-CUfzQvSD.js",
         "assets/shader-xzRCRHTt.js",
         "assets/simplex-BHRnIhah.js",
-        "assets/tail-D1ZYRhWj.js",
+        "assets/tail-o8xFA3Md.js",
         "assets/thinfilm-Ci8F6ZWx.js"
       ],
       "gzipKb": 42.6
     },
     "snow-globe": {
       "chunks": 13,
-      "ownGzip": 2150,
-      "gzip": 31079,
-      "raw": 81002,
+      "ownGzip": 2153,
+      "gzip": 31084,
+      "raw": 81009,
       "files": [
         "assets/colour-caps-rW91Sa46.js",
         "assets/dose-D7hN0jZo.js",
@@ -138,8 +192,8 @@
         "assets/oklab-CS7oj3eq.js",
         "assets/sdf-D3NsrLty.js",
         "assets/shader-xzRCRHTt.js",
-        "assets/snow-globe-C5ZiSCKa.js",
-        "assets/tail-D1ZYRhWj.js",
+        "assets/snow-globe-DBgdiYRW.js",
+        "assets/tail-o8xFA3Md.js",
         "assets/thinfilm-Ci8F6ZWx.js"
       ],
       "gzipKb": 30.4
@@ -147,12 +201,12 @@
     "snowfall": {
       "chunks": 13,
       "ownGzip": 989,
-      "gzip": 33828,
-      "raw": 87653,
+      "gzip": 33829,
+      "raw": 87660,
       "files": [
         "assets/colour-caps-rW91Sa46.js",
         "assets/dose-D7hN0jZo.js",
-        "assets/flakes-CGGAg-bR.js",
+        "assets/flakes-Cq_199bD.js",
         "assets/flicker-kwKU6Yb5.js",
         "assets/fullscreen-BDXEFvdz.js",
         "assets/gamut-COkJmrKM.js",
@@ -160,11 +214,33 @@
         "assets/oklab-CS7oj3eq.js",
         "assets/shader-xzRCRHTt.js",
         "assets/simplex-BHRnIhah.js",
-        "assets/snowfall-CKUdRvbz.js",
-        "assets/tail-D1ZYRhWj.js",
+        "assets/snowfall-BYu0zgk0.js",
+        "assets/tail-o8xFA3Md.js",
         "assets/thinfilm-Ci8F6ZWx.js"
       ],
       "gzipKb": 33
+    },
+    "snowflake": {
+      "chunks": 13,
+      "ownGzip": 4408,
+      "gzip": 31411,
+      "raw": 81274,
+      "files": [
+        "assets/colour-caps-rW91Sa46.js",
+        "assets/dose-D7hN0jZo.js",
+        "assets/flake-h6b4s87g.js",
+        "assets/fold-DTOA1UBx.js",
+        "assets/fullscreen-BDXEFvdz.js",
+        "assets/gamut-COkJmrKM.js",
+        "assets/hash-bWx0F85T.js",
+        "assets/oklab-CS7oj3eq.js",
+        "assets/pane-RegHw4_t.js",
+        "assets/shader-xzRCRHTt.js",
+        "assets/snowflake-DNYg0Bno.js",
+        "assets/tail-o8xFA3Md.js",
+        "assets/thinfilm-Ci8F6ZWx.js"
+      ],
+      "gzipKb": 30.7
     }
   }
 }

@@ -2,37 +2,60 @@
 import type { EffectMeta, EffectModule } from './types.ts';
 import { meta as meta0 } from './blizzard/meta.ts';
 import { meta as meta1 } from './footprints/meta.ts';
-import { meta as meta2 } from './hello/meta.ts';
-import { meta as meta3 } from './melt/meta.ts';
-import { meta as meta4 } from './settling-snow/meta.ts';
-import { meta as meta5 } from './snow-globe/meta.ts';
-import { meta as meta6 } from './snowfall/meta.ts';
+import { meta as meta2 } from './frost-creep/meta.ts';
+import { meta as meta3 } from './frost-text/meta.ts';
+import { meta as meta4 } from './hello/meta.ts';
+import { meta as meta5 } from './melt/meta.ts';
+import { meta as meta6 } from './settling-snow/meta.ts';
+import { meta as meta7 } from './snow-globe/meta.ts';
+import { meta as meta8 } from './snowfall/meta.ts';
+import { meta as meta9 } from './snowflake/meta.ts';
 import poster0 from './blizzard/poster.webp?url';
 import poster1 from './footprints/poster.webp?url';
-import poster2 from './hello/poster.webp?url';
-import poster3 from './melt/poster.webp?url';
-import poster4 from './settling-snow/poster.webp?url';
-import poster5 from './snow-globe/poster.webp?url';
-import poster6 from './snowfall/poster.webp?url';
+import poster2 from './frost-creep/poster.webp?url';
+import poster3 from './frost-text/poster.webp?url';
+import poster4 from './hello/poster.webp?url';
+import poster5 from './melt/poster.webp?url';
+import poster6 from './settling-snow/poster.webp?url';
+import poster7 from './snow-globe/poster.webp?url';
+import poster8 from './snowfall/poster.webp?url';
+import poster9 from './snowflake/poster.webp?url';
 
-export const metas: readonly EffectMeta[] = [meta0, meta1, meta2, meta3, meta4, meta5, meta6];
+export const metas: readonly EffectMeta[] = [
+  meta0,
+  meta1,
+  meta2,
+  meta3,
+  meta4,
+  meta5,
+  meta6,
+  meta7,
+  meta8,
+  meta9,
+];
 
 export const loaders: Readonly<Record<string, () => Promise<EffectModule>>> = {
   blizzard: () => import('./blizzard/index.ts').then((module) => module.effect),
   footprints: () => import('./footprints/index.ts').then((module) => module.effect),
+  'frost-creep': () => import('./frost-creep/index.ts').then((module) => module.effect),
+  'frost-text': () => import('./frost-text/index.ts').then((module) => module.effect),
   hello: () => import('./hello/index.ts').then((module) => module.effect),
   melt: () => import('./melt/index.ts').then((module) => module.effect),
   'settling-snow': () => import('./settling-snow/index.ts').then((module) => module.effect),
   'snow-globe': () => import('./snow-globe/index.ts').then((module) => module.effect),
   snowfall: () => import('./snowfall/index.ts').then((module) => module.effect),
+  snowflake: () => import('./snowflake/index.ts').then((module) => module.effect),
 };
 
 export const posters: Readonly<Record<string, string>> = {
   blizzard: poster0,
   footprints: poster1,
-  hello: poster2,
-  melt: poster3,
-  'settling-snow': poster4,
-  'snow-globe': poster5,
-  snowfall: poster6,
+  'frost-creep': poster2,
+  'frost-text': poster3,
+  hello: poster4,
+  melt: poster5,
+  'settling-snow': poster6,
+  'snow-globe': poster7,
+  snowfall: poster8,
+  snowflake: poster9,
 };

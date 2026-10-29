@@ -10,6 +10,7 @@ import { formatPalette, parsePalette } from '../gpu/colour/palette.ts';
 //   select   p.mode=choppy      must be one of the options
 //   colour   p.tint=0d4a66      sRGB hex without `#`; the stored value is linear RGB
 //   palette  p.palette=0.42 0.14 300,0.6 0.18 345   OKLCH stops (`formatPalette`), normalised
+//   text     p.text=TIME           cut to `maxLength` (40 by default)
 
 export const PARAM_PREFIX = 'p.';
 export const PRESET_KEY = 'preset';
@@ -86,6 +87,8 @@ function normalize(def: ParamDef, raw: unknown): unknown {
       const stops = typeof raw === 'string' ? parsePalette(raw) : undefined;
       return stops ? formatPalette(stops) : undefined;
     }
+    case 'text':
+      return typeof raw === 'string' ? raw.slice(0, def.maxLength ?? 40) : undefined;
   }
 }
 
@@ -103,6 +106,7 @@ function parse(def: ParamDef, text: string): unknown {
       return hexToColor(text);
     case 'select':
     case 'palette':
+    case 'text':
       return normalize(def, text);
   }
 }
@@ -120,6 +124,7 @@ function format(def: ParamDef, value: unknown): string | undefined {
       return colorToHex(fitted as number[]);
     case 'select':
     case 'palette':
+    case 'text':
       return fitted as string;
   }
 }

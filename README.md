@@ -36,6 +36,9 @@ node experiments/snow-compare.mjs   # page snow four ways: CSS, DOM, box-shadow,
 | `settling-snow` | Snow that settles on the page's own elements, to its angle of repose; the pointer brushes it off               | A    |
 | `footprints`    | A snow surface the pointer walks prints into, with raised rims, refilled by falling snow                       | A    |
 | `melt`          | Settled snow melting: piles slump, pull back from the ends and drip, then snow again                           | A    |
+| `frost-creep`   | A pane frosting over from its frame, grown by a phase field and revealed by time or scroll                     | A    |
+| `frost-text`    | Frost branching out from a heading's letters, and slowly over them                                             | A    |
+| `snowflake`     | A snow crystal grown by Reiter's hexagonal automaton, a new one per seed, drawn through the D6 fold            | A    |
 
 ## Layout
 
@@ -44,10 +47,13 @@ src/gpu/snow/               flakes: depth, size, fall, wind, swirl, tumble, dept
 src/gpu/safety/             dose, the pattern analyser, motion estimate, colour caps and the start gate's rules
 src/gpu/colour/             OKLab and OKLCH, palettes, Display P3
 src/gpu/symmetry/fold.ts    the 17 wallpaper groups and the rosettes as folds (D6 for snowflakes)
+src/gpu/pile/               snow piled on page edges: a height per column, conserved, to its angle of repose
+src/gpu/growth/             frost by Kobayashi's phase field, snow crystals by Reiter's automaton, revealed by arrival
+src/gpu/text/               a font as a signed distance field (Temple of Time's), for frost on headings
 src/effects/<id>/           meta.ts, index.ts, shaders, notes.md, poster.webp
-docs/studies/               cost studies, the vection study, page snow four ways
+docs/studies/               cost studies, the vection study, page snow four ways, growth compared
 ```
 
 ## License
 
-MIT.
+MIT. The Anton font, whose outlines `frost-text` uses, is under the SIL Open Font License 1.1 (`fonts/Anton-OFL.txt`).

@@ -6,6 +6,12 @@
         "deviceClass": "unclassified",
         "method": "marginal",
         "ms": 2.32
+      },
+      {
+        "device": "Apple M1 Max",
+        "deviceClass": "apple-silicon",
+        "method": "browser-span",
+        "ms": 5.54
       }
     ],
     "bundleKb": 40.4
@@ -18,8 +24,48 @@
         "deviceClass": "unclassified",
         "method": "marginal",
         "ms": 0.46
+      },
+      {
+        "device": "Apple M1 Max",
+        "deviceClass": "apple-silicon",
+        "method": "browser-span",
+        "ms": 1.23
       }
     ]
+  },
+  "frost-creep": {
+    "gpuMs": [
+      {
+        "device": "Apple M1 Max",
+        "deviceClass": "apple-silicon",
+        "method": "browser-span",
+        "ms": 1.59
+      },
+      {
+        "device": "Apple M1 Max",
+        "deviceClass": "apple-silicon",
+        "method": "marginal",
+        "ms": 0.57
+      }
+    ],
+    "bundleKb": 38.8
+  },
+  "frost-text": {
+    "gpuMs": [
+      {
+        "device": "Apple M1 Max",
+        "deviceClass": "apple-silicon",
+        "method": "browser-span",
+        "ms": 1.96
+      },
+      {
+        "device": "Apple M1 Max",
+        "deviceClass": "apple-silicon",
+        "method": "marginal",
+        "ms": 0.61
+      }
+    ],
+    "bundleKb": 53
   },
   "hello": {
     "gpuMs": [
@@ -28,18 +74,30 @@
         "deviceClass": "unclassified",
         "method": "marginal",
         "ms": 0.39
+      },
+      {
+        "device": "Apple M1 Max",
+        "deviceClass": "apple-silicon",
+        "method": "browser-span",
+        "ms": 0.34
       }
     ],
     "bundleKb": 24.1
   },
   "melt": {
-    "bundleKb": 43.3,
+    "bundleKb": 43.5,
     "gpuMs": [
       {
         "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
         "deviceClass": "unclassified",
         "method": "marginal",
         "ms": 0.57
+      },
+      {
+        "device": "Apple M1 Max",
+        "deviceClass": "apple-silicon",
+        "method": "browser-span",
+        "ms": 0.63
       }
     ]
   },
@@ -51,6 +109,12 @@
         "deviceClass": "unclassified",
         "method": "marginal",
         "ms": 0.74
+      },
+      {
+        "device": "Apple M1 Max",
+        "deviceClass": "apple-silicon",
+        "method": "browser-span",
+        "ms": 0.74
       }
     ]
   },
@@ -61,6 +125,12 @@
         "deviceClass": "unclassified",
         "method": "marginal",
         "ms": 0.17
+      },
+      {
+        "device": "Apple M1 Max",
+        "deviceClass": "apple-silicon",
+        "method": "browser-span",
+        "ms": 0.68
       }
     ],
     "bundleKb": 30.4
@@ -73,7 +143,30 @@
         "deviceClass": "unclassified",
         "method": "marginal",
         "ms": 0.37
+      },
+      {
+        "device": "Apple M1 Max",
+        "deviceClass": "apple-silicon",
+        "method": "browser-span",
+        "ms": 0.65
       }
     ]
+  },
+  "snowflake": {
+    "gpuMs": [
+      {
+        "device": "Apple M1 Max",
+        "deviceClass": "apple-silicon",
+        "method": "browser-span",
+        "ms": 0.67
+      },
+      {
+        "device": "Apple M1 Max",
+        "deviceClass": "apple-silicon",
+        "method": "marginal",
+        "ms": 0.17
+      }
+    ],
+    "bundleKb": 30.7
   }
 }

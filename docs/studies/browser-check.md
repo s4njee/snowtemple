@@ -1,6 +1,6 @@
 # Browser check
 
-Every registered effect, loaded in Google Chrome 156.0.8078.48 (headless, this machine's GPU) on 2026-10-28 by `npm run browser-check`.
+Every registered effect, loaded in Google Chrome 156.0.8078.48 (headless, this machine's GPU) on 2026-10-29 by `npm run browser-check`.
 
 Views per effect: `hero-light` (1280 × 900), `hero-dark` (1280 × 900), `cards-dark` (1280 × 900), `band-light` (1280 × 900), `backdrop-dark` (1280 × 900), `phone-light` (390 × 844 at 2x), `phone-dark` (390 × 844 at 2x), `hud-1080p` (1920 × 1080). The layouts are the mock pages of the effect page; "light" and "dark" are the page tone of the stage.
 
@@ -12,12 +12,15 @@ The HUD time is not the number the cost studies report. It is one frame measured
 
 | Effect | Started | Animates | HUD at 1080p |
 | --- | ---: | --- | --- |
-| blizzard | 8 of 8 | yes | 60 fps, 5.69 ms (5.54 to 6.03 over 3 loads) |
-| footprints | 8 of 8 | yes | 60 fps, 1.44 ms (1.42 to 1.50 over 3 loads) |
-| hello | 8 of 8 | yes | 60 fps, 0.48 ms (0.43 to 0.51 over 3 loads) |
-| melt | 8 of 8 | yes | 60 fps, 0.90 ms (0.90 to 0.91 over 3 loads) |
-| settling-snow | 8 of 8 | yes | 60 fps, 0.80 ms (0.80 to 0.81 over 3 loads) |
-| snow-globe | 8 of 8 | yes | 60 fps, 0.72 ms (0.69 to 0.74 over 3 loads) |
-| snowfall | 8 of 8 | yes | 60 fps, 0.74 ms (0.71 to 0.75 over 3 loads) |
+| blizzard | 8 of 8 | yes | 60 fps, 5.54 ms (5.51 to 6.69 over 3 loads) |
+| footprints | 8 of 8 | yes | 60 fps, 1.23 ms (1.22 to 1.33 over 3 loads) |
+| frost-creep | 8 of 8 | yes | 60 fps, 1.59 ms (1.45 to 1.62 over 5 loads) |
+| frost-text | 8 of 8 | yes | 60 fps, 1.96 ms (1.90 to 2.04 over 5 loads) |
+| hello | 8 of 8 | yes | 60 fps, 0.34 ms (0.32 to 0.34 over 3 loads) |
+| melt | 8 of 8 | yes | 60 fps, 0.63 ms (0.62 to 0.64 over 3 loads) |
+| settling-snow | 8 of 8 | yes | 60 fps, 0.74 ms (0.71 to 0.77 over 3 loads) |
+| snow-globe | 8 of 8 | yes | 60 fps, 0.68 ms (0.68 to 0.69 over 3 loads) |
+| snowfall | 8 of 8 | yes | 60 fps, 0.65 ms (0.65 to 0.66 over 3 loads) |
+| snowflake | 8 of 8 | yes | 60 fps, 0.67 ms (0.66 to 0.70 over 3 loads) |
 
 No view logged a console error.

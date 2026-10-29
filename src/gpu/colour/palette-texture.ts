@@ -70,7 +70,7 @@ const f32 = new Float32Array(1);
 const u32 = new Uint32Array(f32.buffer);
 
 /** IEEE half from a float, round to nearest; enough for colour in 0..1. */
-function toHalf(value: number): number {
+export function toHalf(value: number): number {
   f32[0] = value;
   const x = u32[0]!;
   const sign = (x >>> 16) & 0x8000;
