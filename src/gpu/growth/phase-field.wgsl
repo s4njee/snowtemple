@@ -42,8 +42,12 @@ const TILE: i32 = 16;
 const HALO: i32 = 2;
 const SPAN: i32 = TILE + 2 * HALO;
 
+// The seed texture is read only before the first barrier: Mesa's llvmpipe (25.2, which CI's
+// lavapipe runs) crashes on a texture read after a workgroupBarrier. So the orientation is tiled
+// with p and T.
 var<workgroup> tile_p: array<f32, 400>;
 var<workgroup> tile_t: array<f32, 400>;
+var<workgroup> tile_theta: array<f32, 400>;
 // e e' dp/dx and e e' dp/dy, over the tile less one ring of its halo.
 var<workgroup> flux_a: array<f32, 400>;
 var<workgroup> flux_b: array<f32, 400>;
@@ -51,6 +55,10 @@ var<workgroup> flux_b: array<f32, 400>;
 fn index_of(c: vec2i) -> u32 {
   let q = clamp(c, vec2i(0), vec2i(i32(G.width) - 1, i32(G.height) - 1));
   return u32(q.y) * G.width + u32(q.x);
+}
+
+fn texel_of(c: vec2i) -> vec2i {
+  return clamp(c, vec2i(0), vec2i(i32(G.width) - 1, i32(G.height) - 1));
 }
 
 // The direction of grad p. atan2(0, 0) is undefined in WGSL (NaN on Metal), and inside the ice
@@ -79,10 +87,14 @@ fn laplacian(f: ptr<workgroup, array<f32, 400>>, x: i32, y: i32) -> f32 {
 ) {
   let origin = vec2i(group.xy) * TILE;
   let lane = i32(local.y) * TILE + i32(local.x);
+  let cell = origin + vec2i(local.xy);
+  let seed = textureLoad(seeds, texel_of(cell), 0);
   for (var k = lane; k < SPAN * SPAN; k += TILE * TILE) {
-    let c = cells_in[index_of(origin + vec2i(k % SPAN, k / SPAN) - HALO)];
+    let at_k = origin + vec2i(k % SPAN, k / SPAN) - HALO;
+    let c = cells_in[index_of(at_k)];
     tile_p[k] = c.p;
     tile_t[k] = c.t;
+    tile_theta[k] = textureLoad(seeds, texel_of(at_k), 0).b;
   }
   workgroupBarrier();
   // The anisotropic fluxes, one ring into the halo so their derivatives can be taken.
@@ -91,21 +103,18 @@ fn laplacian(f: ptr<workgroup, array<f32, 400>>, x: i32, y: i32) -> f32 {
     let y = k / (TILE + 2) - 1;
     let px = (tile_p[at(x + 1, y)] - tile_p[at(x - 1, y)]) / (2.0 * G.dx);
     let py = (tile_p[at(x, y + 1)] - tile_p[at(x, y - 1)]) / (2.0 * G.dx);
-    let theta0 = textureLoad(seeds, clamp(origin + vec2i(x, y), vec2i(0), vec2i(i32(G.width) - 1, i32(G.height) - 1)), 0).b;
-    let angle = G.order * (direction(px, py) - theta0);
+    let angle = G.order * (direction(px, py) - tile_theta[at(x, y)]);
     let e = G.epsilon * (1.0 + G.delta * cos(angle));
     let de = -G.epsilon * G.order * G.delta * sin(angle);
     flux_a[at(x, y)] = e * de * px;
     flux_b[at(x, y)] = e * de * py;
   }
   workgroupBarrier();
-  let cell = origin + vec2i(local.xy);
   if (cell.x >= i32(G.width) || cell.y >= i32(G.height)) { return; }
   let x = i32(local.x);
   let y = i32(local.y);
   let i = index_of(cell);
   let old = cells_in[i];
-  let seed = textureLoad(seeds, cell, 0);
   let p = old.p;
   let t = old.t;
   // Its own e, for the e^2 lap p term.
